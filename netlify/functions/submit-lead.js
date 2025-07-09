@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const { createClient } = require('@supabase/supabase-js');
 
 exports.handler = async (event, context) => {
   // CORS headers
@@ -42,6 +43,37 @@ exports.handler = async (event, context) => {
           error: 'Missing required fields' 
         }),
       };
+    }
+
+    // Initialize Supabase client (if configured)
+    let supabase = null;
+    if (process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY) {
+      supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
+    }
+
+    // Store lead in database
+    if (supabase) {
+      try {
+        const { data, error } = await supabase
+          .from('leads')
+          .insert([
+            {
+              ...leadData,
+              created_at: new Date().toISOString(),
+              status: 'new'
+            }
+          ])
+          .select();
+
+        if (error) {
+          console.error('Supabase error:', error);
+        } else {
+          console.log('Lead stored in database:', data);
+        }
+      } catch (dbError) {
+        console.error('Database storage failed:', dbError);
+        // Don't fail the entire request if database fails
+      }
     }
 
     // Create email transporter
