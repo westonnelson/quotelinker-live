@@ -1,0 +1,20 @@
+{
+  "name": "quotelinker-live",
+  "version": "1.0.0",
+  "description": "QuoteLinker - AI-Optimized InsurTech Marketplace",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "deploy": "./deploy.sh",
+    "build": "echo 'No build step required for static site'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/quotelinker-live.git"
+  },
+  "keywords": ["insurance", "quotes", "insurtech", "ai"],
+  "author": "QuoteLinker LLC",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
