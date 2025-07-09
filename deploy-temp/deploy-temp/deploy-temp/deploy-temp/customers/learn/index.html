@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Insurance | QuoteLinker - Insurance Education & Resources</title>
+    <meta name="description" content="Master insurance fundamentals with QuoteLinker's comprehensive learning center. Get expert insights on home, auto, life, and health insurance with our AI-powered education platform.">
+    <meta name="keywords" content="insurance education, learn insurance, insurance guide, home insurance tips, auto insurance guide, life insurance basics, health insurance explained">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quotelinker.com/customers/learn">
+    <meta property="og:title" content="Learn Insurance | QuoteLinker">
+    <meta property="og:description" content="Master insurance fundamentals with QuoteLinker's comprehensive learning center and AI-powered education platform.">
+    <meta property="og:image" content="https://quotelinker.com/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://quotelinker.com/customers/learn">
+    <meta property="twitter:title" content="Learn Insurance | QuoteLinker">
+    <meta property="twitter:description" content="Master insurance fundamentals with QuoteLinker's comprehensive learning center and AI-powered education platform.">
+    <meta property="twitter:image" content="https://quotelinker.com/logo.png">
+    
+    <link rel="icon" href="../../favicon.ico" sizes="any">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://quotelinker.com/customers/learn">
+    
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://quotelinker.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Customers",
+                "item": "https://quotelinker.com/customers"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Learn",
+                "item": "https://quotelinker.com/customers/learn"
+            }
+        ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            scroll-behavior: smooth;
+        }
+        .brand-text { color: #00EEFD; }
+        .brand-bg { 
+            background: linear-gradient(135deg, #00EEFD 0%, #00c4db 100%);
+        }
+        .brand-bg-hover:hover { 
+            background: linear-gradient(135deg, #00d1e0 0%, #00a3c4 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px rgba(0, 238, 253, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00EEFD 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .article-card {
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        /* Mobile menu styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-3 group">
+                    <img src="../../logo.png" alt="QuoteLinker Logo" class="h-10 w-10 transition-transform group-hover:scale-110">
+                    <span class="text-xl font-bold gradient-text">QuoteLinker</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="/customers.html" class="text-sm font-medium text-slate-600 hover:text-slate-900">Customers</a>
+                    <a href="/agents.html" class="text-sm font-medium text-slate-600 hover:text-slate-900">Agents</a>
+                    <a href="/about.html" class="text-sm font-medium text-slate-600 hover:text-slate-900">About</a>
+                    <a href="/" class="brand-bg text-white font-bold rounded-full px-6 py-2 text-sm hover:opacity-90 transition">Get a Quote</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-menu md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-slate-200">
+                    <a href="/customers.html" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900">Customers</a>
+                    <a href="/agents.html" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900">Agents</a>
+                    <a href="/about.html" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900">About</a>
+                    <a href="/" class="block mx-3 my-2 brand-bg text-white font-bold rounded-full px-6 py-2 text-sm text-center">Get a Quote</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <section class="bg-white border-b border-slate-200">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                        <li class="inline-flex items-center">
+                            <a href="/" class="inline-flex items-center text-sm font-medium text-slate-700 hover:text-blue-600">
+                                <svg class="w-3 h-3 mr-2.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                                </svg>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="w-3 h-3 text-slate-400 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"></path>
+                                </svg>
+                                <a href="/customers.html" class="ml-1 text-sm font-medium text-slate-700 hover:text-blue-600 md:ml-2">Customers</a>
+                            </div>
+                        </li>
+                        <li aria-current="page">
+                            <div class="flex items-center">
+                                <svg class="w-3 h-3 text-slate-400 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"></path>
+                                </svg>
+                                <span class="ml-1 text-sm font-medium text-slate-500 md:ml-2">Learn</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 px-4">
+            <div class="container mx-auto text-center">
+                <div class="flex justify-center mb-8">
+                    <div class="relative">
+                        <img src="../../logo2.png" alt="QuoteLinker Learn" class="h-16 w-16 logo-glow">
+                    </div>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Insurance Education Center</h1>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-8">Master the fundamentals of insurance with expert-guided content designed to make complex topics simple and actionable.</p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto">
+                    <div class="relative">
+                        <input type="text" id="search-input" placeholder="Search for insurance topics..." class="w-full px-6 py-4 bg-white/10 border border-white/20 text-white placeholder-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00EEFD] transition backdrop-blur-sm">
+                        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-300 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insurance Fundamentals -->
+        <section class="py-20 px-4 bg-white">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900 text-center mb-4">Insurance Fundamentals</h2>
+                <p class="text-slate-600 text-center mb-12 max-w-2xl mx-auto">Start here if you're new to insurance. These foundational concepts will help you understand how insurance works and what to look for.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="article-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm transition-all duration-300 cursor-pointer">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600 text-xl mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">What is Insurance?</h3>
+                        <p class="text-slate-600 mb-4">Learn the basic concept of insurance, how it works, and why it's essential for financial protection.</p>
+                        <span class="text-sm text-cyan-600 font-medium">5 min read</span>
+                    </article>
+
+                    <article class="article-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm transition-all duration-300 cursor-pointer">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-green-100 text-green-600 text-xl mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">Understanding Premiums</h3>
+                        <p class="text-slate-600 mb-4">Discover how insurance premiums are calculated and what factors influence your rates.</p>
+                        <span class="text-sm text-cyan-600 font-medium">7 min read</span>
+                    </article>
+
+                    <article class="article-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm transition-all duration-300 cursor-pointer">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-purple-100 text-purple-600 text-xl mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">Deductibles Explained</h3>
+                        <p class="text-slate-600 mb-4">Learn how deductibles work and how choosing the right deductible can save you money.</p>
+                        <span class="text-sm text-cyan-600 font-medium">6 min read</span>
+                    </article>
+
+                    <article class="article-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm transition-all duration-300 cursor-pointer">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 text-xl mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">Coverage Types & Limits</h3>
+                        <p class="text-slate-600 mb-4">Understand different coverage types and how to determine the right coverage limits for your needs.</p>
+                        <span class="text-sm text-cyan-600 font-medium">8 min read</span>
+                    </article>
+
+                    <article class="article-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm transition-all duration-300 cursor-pointer">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-yellow-100 text-yellow-600 text-xl mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">Filing Claims</h3>
+                        <p class="text-slate-600 mb-4">Step-by-step guide to filing insurance claims and maximizing your chances of approval.</p>
+                        <span class="text-sm text-cyan-600 font-medium">10 min read</span>
+                    </article>
+
+                    <article class="article-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm transition-all duration-300 cursor-pointer">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 text-xl mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3">Comparing Quotes</h3>
+                        <p class="text-slate-600 mb-4">Learn how to effectively compare insurance quotes and find the best value for your money.</p>
+                        <span class="text-sm text-cyan-600 font-medium">9 min read</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insurance Types Deep Dive -->
+        <section class="py-20 px-4 bg-slate-50">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900 text-center mb-4">Insurance Types Deep Dive</h2>
+                <p class="text-slate-600 text-center mb-12 max-w-2xl mx-auto">Explore comprehensive guides for each type of insurance to make informed decisions.</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-cyan-100 text-cyan-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800">Homeowners Insurance</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-cyan-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Understanding dwelling coverage and personal property protection</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-cyan-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Liability coverage for accidents on your property</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-cyan-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Additional living expenses during repairs</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-cyan-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Factors that affect your premium rates</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 text-cyan-600 font-medium hover:text-cyan-700 transition">
+                            Read Complete Guide →
+                        </button>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800">Auto Insurance</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Liability, collision, and comprehensive coverage</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Understanding state minimum requirements</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>How your driving record affects rates</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Discounts and ways to save money</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 text-blue-600 font-medium hover:text-blue-700 transition">
+                            Read Complete Guide →
+                        </button>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-green-100 text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800">Life Insurance</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Term vs. whole life insurance explained</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Calculating how much coverage you need</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Health factors that affect premiums</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Beneficiary designation best practices</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 text-green-600 font-medium hover:text-green-700 transition">
+                            Read Complete Guide →
+                        </button>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-purple-100 text-purple-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800">Health Insurance</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>HMO, PPO, and EPO plan differences</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Understanding deductibles and out-of-pocket maximums</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Prescription drug coverage options</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Health Savings Accounts (HSA) benefits</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 text-purple-600 font-medium hover:text-purple-700 transition">
+                            Read Complete Guide →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 px-4 bg-white">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900 text-center mb-4">Frequently Asked Questions</h2>
+                <p class="text-slate-600 text-center mb-12 max-w-2xl mx-auto">Quick answers to the most common insurance questions we hear.</p>
+                
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3">How much insurance do I really need?</h3>
+                        <p class="text-slate-600">The amount of insurance you need depends on your assets, income, dependents, and risk tolerance. A general rule is to have enough coverage to replace your income and protect your assets, but a licensed agent can help determine the exact amount based on your specific situation.</p>
+                    </div>
+                    
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3">Will shopping for quotes hurt my credit score?</h3>
+                        <p class="text-slate-600">Most insurance companies perform "soft" credit checks that don't affect your credit score when providing quotes. Only hard credit checks impact your score, and these are typically done only after you've decided to purchase a policy.</p>
+                    </div>
+                    
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3">Can I change my insurance anytime?</h3>
+                        <p class="text-slate-600">Yes, you can generally cancel or change your insurance policy at any time. However, timing matters for avoiding gaps in coverage and potential penalties. It's best to have your new policy in place before canceling your current one.</p>
+                    </div>
+                    
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3">What's the difference between an agent and a broker?</h3>
+                        <p class="text-slate-600">An agent typically represents one or a few insurance companies, while a broker works independently and can shop multiple companies for you. Both are licensed professionals, but brokers generally have access to more options.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 px-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Ready to Put Your Knowledge to Use?</h2>
+                <p class="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">Now that you understand the basics, let's find you the perfect insurance policy with personalized quotes from licensed agents.</p>
+                <a href="/" class="inline-block bg-white text-cyan-600 font-bold rounded-full text-lg px-10 py-4 shadow-lg hover:bg-slate-50 transition-transform transform hover:scale-105">
+                    Get Your Quotes Now
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- Include new footer component -->
+    <!-- prettier-ignore -->
+    <!--#include virtual="/components/footer.html" -->
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="../../logo.png" alt="QuoteLinker Logo" class="h-10 w-10">
+                        <span class="text-xl font-bold brand-text">QuoteLinker</span>
+                    </div>
+                    <p class="text-slate-300 mb-6 max-w-md">
+                        Connecting customers with trusted insurance professionals through innovative technology and personalized service.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Products</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="/auto-insurance.html" class="hover:text-white transition-colors">Auto Insurance</a></li>
+                        <li><a href="/home-insurance.html" class="hover:text-white transition-colors">Home Insurance</a></li>
+                        <li><a href="/life-insurance.html" class="hover:text-white transition-colors">Life Insurance</a></li>
+                        <li><a href="/health-insurance.html" class="hover:text-white transition-colors">Health Insurance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Company</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="/about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/agents.html" class="hover:text-white transition-colors">For Agents</a></li>
+
+
+<script>
+// Mobile menu toggle
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('open');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const query = searchInput.value.trim();
+            if (query) {
+                // In a real implementation, this would filter content or redirect to search results
+                console.log('Searching for:', query);
+                alert(`Searching for: ${query}\n\nThis would show relevant insurance education content.`);
+            }
+        }
+    });
+
+    // Article click handlers
+    const articles = document.querySelectorAll('.article-card');
+    articles.forEach(article => {
+        article.addEventListener('click', () => {
+            const title = article.querySelector('h3').textContent;
+            // In a real implementation, this would navigate to the full article
+            console.log('Opening article:', title);
+            alert(`Opening: ${title}\n\nThis would show the full educational content.`);
+        });
+    });
+});
+</script>
+
+</body>
+</html>

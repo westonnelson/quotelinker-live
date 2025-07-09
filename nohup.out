@@ -1,0 +1,95 @@
+::1 - - [09/Jul/2025 07:32:57] "HEAD / HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:33:04] "GET /?id=f1151d44-2a07-444f-ba31-bd7e36dcbb7e&vscodeBrowserReqId=1752064384303 HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:33:04] "GET /logo.png HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:47:45] "GET /?id=f1151d44-2a07-444f-ba31-bd7e36dcbb7e&vscodeBrowserReqId=1752065265905 HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:47:49] "GET /?id=f1151d44-2a07-444f-ba31-bd7e36dcbb7e&vscodeBrowserReqId=1752065269571 HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:48:06] "GET /manifest.json HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:49:10] "GET / HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:49:10] "GET /logo.png HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:49:11] "GET /favicon.ico HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:49:12] "GET /manifest.json HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:49:12] "GET /favicon.svg HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:49:18] code 404, message File not found
+::1 - - [09/Jul/2025 07:49:18] "GET /customers HTTP/1.1" 404 -
+::1 - - [09/Jul/2025 07:49:24] code 404, message File not found
+::1 - - [09/Jul/2025 07:49:24] "GET /agents HTTP/1.1" 404 -
+::1 - - [09/Jul/2025 07:49:28] code 404, message File not found
+::1 - - [09/Jul/2025 07:49:28] "GET /about HTTP/1.1" 404 -
+::1 - - [09/Jul/2025 07:51:31] code 404, message File not found
+::1 - - [09/Jul/2025 07:51:31] "GET /agents HTTP/1.1" 404 -
+::1 - - [09/Jul/2025 07:51:37] "GET /customers HTTP/1.1" 301 -
+::1 - - [09/Jul/2025 07:51:37] "GET /customers/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:54:13] "GET / HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:55:55] "GET /customers HTTP/1.1" 301 -
+::1 - - [09/Jul/2025 07:55:55] "GET /customers/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:56:00] "GET /agents HTTP/1.1" 301 -
+::1 - - [09/Jul/2025 07:56:00] "GET /agents/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:56:04] code 404, message File not found
+::1 - - [09/Jul/2025 07:56:04] "GET /about HTTP/1.1" 404 -
+::1 - - [09/Jul/2025 07:56:27] "GET /customers/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:56:33] "GET /agents/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:56:37] "GET /customers/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:56:50] "GET /business-insurance.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:57:44] "GET /life-insurance.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:58:00] "GET /auto-insurance.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:58:01] "GET /?quote=Auto HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:58:13] "GET /home-insurance.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:59:14] "GET /customers/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:59:19] "GET /agents/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:59:22] "GET /?id=f1151d44-2a07-444f-ba31-bd7e36dcbb7e&vscodeBrowserReqId=1752065962103 HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:59:24] "GET /customers/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:59:30] "GET /agents/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 07:59:50] "GET /?id=f1151d44-2a07-444f-ba31-bd7e36dcbb7e&vscodeBrowserReqId=1752065990153 HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:00:01] code 404, message File not found
+::1 - - [09/Jul/2025 08:00:01] "GET /about HTTP/1.1" 404 -
+::1 - - [09/Jul/2025 08:05:00] "GET /customers/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:05:04] "GET /customers/learn/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:05:04] "GET /logo2.png HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:05:10] "GET /customers.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:05:17] "GET /agents HTTP/1.1" 301 -
+::1 - - [09/Jul/2025 08:05:17] "GET /agents/ HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:05:36] "GET /agents/tools.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:05:38] "GET /agents.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:05:45] "GET /customers.html HTTP/1.1" 304 -
+::1 - - [09/Jul/2025 08:05:48] code 404, message File not found
+::1 - - [09/Jul/2025 08:05:48] "GET /about HTTP/1.1" 404 -
+::1 - - [09/Jul/2025 08:05:53] "GET / HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:11:12] "GET /customers.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:11:22] "GET /customers/learn/ HTTP/1.1" 304 -
+::1 - - [09/Jul/2025 08:11:27] "GET / HTTP/1.1" 304 -
+::1 - - [09/Jul/2025 08:11:42] "GET /about.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:11:55] code 404, message File not found
+::1 - - [09/Jul/2025 08:11:55] "GET /contact HTTP/1.1" 404 -
+::1 - - [09/Jul/2025 08:18:50] "GET /about.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:18:52] code 404, message File not found
+::1 - - [09/Jul/2025 08:18:52] "GET /contact HTTP/1.1" 404 -
+::1 - - [09/Jul/2025 08:18:56] "GET / HTTP/1.1" 304 -
+::1 - - [09/Jul/2025 08:20:20] "GET /customers.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:20:32] "GET / HTTP/1.1" 304 -
+::1 - - [09/Jul/2025 08:21:34] "GET / HTTP/1.1" 304 -
+::1 - - [09/Jul/2025 08:22:37] "GET / HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:23:22] "GET /?id=f1151d44-2a07-444f-ba31-bd7e36dcbb7e&vscodeBrowserReqId=1752067402220 HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:23:22] "GET /logo.png HTTP/1.1" 304 -
+::1 - - [09/Jul/2025 08:23:55] code 501, message Unsupported method ('POST')
+::1 - - [09/Jul/2025 08:23:55] "POST /.netlify/functions/ai-chat HTTP/1.1" 501 -
+::1 - - [09/Jul/2025 08:26:52] "GET / HTTP/1.1" 304 -
+::1 - - [09/Jul/2025 08:27:01] code 501, message Unsupported method ('POST')
+::1 - - [09/Jul/2025 08:27:01] "POST /.netlify/functions/ai-chat HTTP/1.1" 501 -
+::1 - - [09/Jul/2025 08:27:04] code 501, message Unsupported method ('POST')
+::1 - - [09/Jul/2025 08:27:04] "POST /.netlify/functions/ai-chat HTTP/1.1" 501 -
+::1 - - [09/Jul/2025 08:27:52] "GET / HTTP/1.1" 304 -
+::1 - - [09/Jul/2025 08:32:46] "GET /?id=f1151d44-2a07-444f-ba31-bd7e36dcbb7e&vscodeBrowserReqId=1752067966634 HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:32:51] "GET /auto-insurance.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:32:53] "GET /?quote=Auto HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:32:57] "GET /home-insurance.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:33:07] "GET /life-insurance.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:33:27] "GET /customers.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:33:29] "GET / HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:33:37] "GET /business-insurance.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:38:12] "GET /customers.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:38:14] "GET /agents.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:38:15] "GET /about.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:38:18] "GET / HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:38:21] "GET /contact.html HTTP/1.1" 200 -
+::1 - - [09/Jul/2025 08:40:39] code 501, message Unsupported method ('POST')
+::1 - - [09/Jul/2025 08:40:39] "POST /.netlify/functions/ai-chat HTTP/1.1" 501 -

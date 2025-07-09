@@ -1,29 +1,50 @@
 #!/bin/bash
 
-echo "🚀 Deploying QuoteLinker with Enhanced UI..."
+echo "🚀 QuoteLinker Production Deployment"
+echo "====================================="
 
-# Create a clean deployment folder
-rm -rf ./deploy-temp
-mkdir deploy-temp
+# Check if Netlify CLI is installed
+if ! command -v netlify &> /dev/null; then
+    echo "📦 Installing Netlify CLI..."
+    npm install -g netlify-cli
+fi
 
-# Copy all necessary files (excluding development files)
-cp -r . deploy-temp/ 2>/dev/null || true
+# Check for proper directory
+if [ ! -f "index.html" ] || [ ! -d "netlify/functions" ]; then
+    echo "❌ Error: Please run this script from the project root directory"
+    exit 1
+fi
 
-# Clean up deployment folder
-cd deploy-temp
-rm -rf .git .env deploy-temp
-rm -f deploy.sh deploy-netlify.sh *.md
+# Install all dependencies
+echo "📦 Installing dependencies..."
+npm install
 
-echo "✅ Deployment package ready!"
-echo "📂 Files prepared in ./deploy-temp/"
+# Install Netlify function dependencies
+echo "📦 Installing Netlify function dependencies..."
+cd netlify/functions
+npm install
+cd ../..
+
+# Update version in package.json to today's date
+TODAY=$(date +"%Y.%m.%d")
+sed -i '' "s/\"version\": \".*\"/\"version\": \"$TODAY\"/" package.json
+echo "✅ Updated version to $TODAY"
+
+# Deploy to Netlify
+echo "🌐 Deploying to Netlify..."
+
+# Login to Netlify if needed
+netlify status || netlify login
+
+# Deploy with production flag
+netlify deploy --prod --dir=.
+
+echo "🎉 Deployment complete!"
 echo ""
-echo "🌐 Next steps:"
-echo "1. Drag the 'deploy-temp' folder to: https://app.netlify.com/drop"
-echo "2. Your enhanced UI will be live!"
-echo "3. Your API key is already configured in Netlify"
+echo "⚠️  IMPORTANT: Verify these environment variables in Netlify dashboard:"
+echo "   - GEMINI_API_KEY (for AI functionality)"
+echo "   - EMAIL_USER (for lead notifications)"
+echo "   - EMAIL_PASS (for lead notifications)"
+echo "   - NOTIFICATION_EMAIL (where to send leads)"
 echo ""
-
-# Open the deployment folder
-open ./deploy-temp
-
-echo "🎉 Ready to deploy!"
+echo "✅ Production deployment is now live!"

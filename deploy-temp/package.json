@@ -1,0 +1,39 @@
+{
+  "name": "quotelinker-live",
+  "version": "0.9.1-footer",
+  "description": "QuoteLinker - AI-Optimized InsurTech Marketplace",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "deploy": "./deploy.sh",
+    "build": "echo 'No build step required for static site'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/westonnelson/quotelinker-live.git"
+  },
+  "keywords": [
+    "insurance",
+    "quotes",
+    "insurtech",
+    "ai"
+  ],
+  "author": "QuoteLinker LLC",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^24.0.12",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "http-server": "^14.1.1",
+    "next": "^15.3.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  },
+  "main": "index.js",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/westonnelson/quotelinker-live/issues"
+  },
+  "homepage": "https://github.com/westonnelson/quotelinker-live#readme"
+}
