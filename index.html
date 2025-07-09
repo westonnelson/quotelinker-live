@@ -165,6 +165,9 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 238, 253, 0.1);
         }
         
         .insurance-card::before {
@@ -174,8 +177,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 238, 253, 0.1), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(0, 238, 253, 0.15), transparent);
+            transition: left 0.6s ease;
         }
         
         .insurance-card:hover::before {
@@ -183,8 +186,22 @@
         }
         
         .insurance-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(0, 238, 253, 0.2), 0 0 0 1px rgba(0, 238, 253, 0.3);
+            border-color: rgba(0, 238, 253, 0.3);
+        }
+        
+        /* Enhanced Insurance Icons */
+        .insurance-icon {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(0, 238, 253, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+            border: 1px solid rgba(0, 238, 253, 0.2);
+        }
+        
+        .insurance-card:hover .insurance-icon {
+            background: linear-gradient(135deg, rgba(0, 238, 253, 0.2) 0%, rgba(14, 165, 233, 0.2) 100%);
+            transform: scale(1.1) rotate(5deg);
+            border-color: rgba(0, 238, 253, 0.4);
         }
         
         /* Glass Morphism Effects */
@@ -208,12 +225,62 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
         }
         
         .cta-button:hover::before {
             left: 100%;
+        }
+        
+        /* Add floating particle effect */
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #00EEFD, #0ea5e9);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float-particle 15s linear infinite;
+        }
+        
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Enhanced stats section */
+        .stat-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 238, 253, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 238, 253, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 238, 253, 0.1);
         }
         
         /* Modal Enhancements */
@@ -361,6 +428,19 @@
             <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
             <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
             
+            <!-- Floating Particles -->
+            <div class="hero-particles">
+                <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+                <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+                <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+                <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+                <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+                <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+                <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+                <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+                <div class="particle" style="left: 90%; animation-delay: 1s;"></div>
+            </div>
+            
             <div class="container mx-auto relative z-10">
                 <div class="flex justify-center mb-12 fade-in-up">
                     <div class="hero-logo-container hero-logo">
@@ -426,15 +506,15 @@
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-                    <div data-funnel-type="Home" class="quote-cta-button insurance-card bg-white p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-2xl cursor-pointer group">
-                        <div class="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <div data-funnel-type="Home" class="quote-cta-button insurance-card bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl cursor-pointer group">
+                        <div class="insurance-icon w-16 h-16 flex items-center justify-center rounded-2xl text-cyan-600 text-2xl mb-6 group-hover:scale-110 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800 mb-3">Homeowners Insurance</h3>
-                        <p class="text-slate-600 leading-relaxed">Safeguard every brick and belonging with coverage tailored to your address, not a spreadsheet.</p>
-                        <div class="mt-6 flex items-center text-cyan-600 font-medium">
+                        <p class="text-slate-600 leading-relaxed mb-4">Safeguard every brick and belonging with coverage tailored to your address, not a spreadsheet.</p>
+                        <div class="mt-auto flex items-center text-cyan-600 font-medium">
                             <span>Get Quote</span>
                             <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -442,15 +522,16 @@
                         </div>
                     </div>
                     
-                    <div data-funnel-type="Auto" class="quote-cta-button insurance-card bg-white p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-2xl cursor-pointer group">
-                        <div class="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <div data-funnel-type="Auto" class="quote-cta-button insurance-card bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl cursor-pointer group">
+                        <div class="insurance-icon w-16 h-16 flex items-center justify-center rounded-2xl text-cyan-600 text-2xl mb-6 group-hover:scale-110 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17l4 4 4-4m-4-5v9m-4-11V3h8v3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17l4 4 4-4m-4-5v9"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3h7a2 2 0 012 2v6a2 2 0 01-2 2h-7m-9-2a2 2 0 002 2h4a2 2 0 002-2V5a2 2 0 00-2-2H3a2 2 0 00-2 2v6z"/>
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800 mb-3">Auto Insurance</h3>
-                        <p class="text-slate-600 leading-relaxed">Cruise with confidence—lock in rates that keep you covered and cash-flow happy.</p>
-                        <div class="mt-6 flex items-center text-cyan-600 font-medium">
+                        <p class="text-slate-600 leading-relaxed mb-4">Cruise with confidence—lock in rates that keep you covered and cash-flow happy.</p>
+                        <div class="mt-auto flex items-center text-cyan-600 font-medium">
                             <span>Get Quote</span>
                             <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -458,15 +539,15 @@
                         </div>
                     </div>
                     
-                    <div data-funnel-type="Life" class="quote-cta-button insurance-card bg-white p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-2xl cursor-pointer group">
-                        <div class="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <div data-funnel-type="Life" class="quote-cta-button insurance-card bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl cursor-pointer group">
+                        <div class="insurance-icon w-16 h-16 flex items-center justify-center rounded-2xl text-cyan-600 text-2xl mb-6 group-hover:scale-110 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800 mb-3">Life Insurance</h3>
-                        <p class="text-slate-600 leading-relaxed">Give your loved ones a future, not a question mark, with policies that build cash value over time.</p>
-                        <div class="mt-6 flex items-center text-cyan-600 font-medium">
+                        <p class="text-slate-600 leading-relaxed mb-4">Give your loved ones a future, not a question mark, with policies that build cash value over time.</p>
+                        <div class="mt-auto flex items-center text-cyan-600 font-medium">
                             <span>Get Quote</span>
                             <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -474,8 +555,8 @@
                         </div>
                     </div>
                     
-                    <div data-funnel-type="Health" class="quote-cta-button insurance-card bg-white p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-2xl cursor-pointer group">
-                        <div class="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <div data-funnel-type="Health" class="quote-cta-button insurance-card bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl cursor-pointer group">
+                        <div class="insurance-icon w-16 h-16 flex items-center justify-center rounded-2xl text-cyan-600 text-2xl mb-6 group-hover:scale-110 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
@@ -493,6 +574,30 @@
             </div>
         </section>
         
+        <!-- New Stats Section -->
+        <section class="py-20 px-4 bg-gradient-to-r from-cyan-50 to-blue-50">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="stat-card text-center p-8 rounded-3xl">
+                        <div class="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">30s</div>
+                        <div class="text-slate-600 font-medium">Average Quote Time</div>
+                    </div>
+                    <div class="stat-card text-center p-8 rounded-3xl">
+                        <div class="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">98%</div>
+                        <div class="text-slate-600 font-medium">Customer Satisfaction</div>
+                    </div>
+                    <div class="stat-card text-center p-8 rounded-3xl">
+                        <div class="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">5M+</div>
+                        <div class="text-slate-600 font-medium">Quotes Generated</div>
+                    </div>
+                    <div class="stat-card text-center p-8 rounded-3xl">
+                        <div class="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">24/7</div>
+                        <div class="text-slate-600 font-medium">AI Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="learn" class="bg-gradient-to-br from-white to-slate-50 py-24 px-4">
             <div class="container mx-auto text-center">
                 <div class="fade-in-up mb-12">
@@ -505,18 +610,19 @@
                 </div>
                 
                 <div class="fade-in-up mt-12 max-w-2xl mx-auto" style="animation-delay: 0.2s;">
-                    <div class="flex gap-3 mb-6">
-                        <input id="ai-prompt-input" type="text" placeholder="e.g., What is a deductible?" class="form-input flex-1 px-6 py-4 bg-white border-2 border-slate-200 text-slate-900 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#00EEFD] transition-all text-lg shadow-sm">
-                        <button id="ai-submit-button" class="cta-button brand-bg text-white font-bold rounded-2xl px-8 py-4 brand-bg-hover transition-all flex items-center justify-center min-w-[140px] shadow-lg">
-                            <span class="button-text flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                                Explain It
-                            </span>
-                            <span class="button-spinner hidden animate-spin rounded-full h-6 w-6 border-b-2 border-white"></span>
-                        </button>
-                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-cyan-100">
+                        <div class="flex gap-3 mb-6">
+                            <input id="ai-prompt-input" type="text" placeholder="e.g., What is a deductible?" class="form-input flex-1 px-6 py-4 bg-white/90 border-2 border-slate-200 text-slate-900 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#00EEFD] transition-all text-lg shadow-sm backdrop-blur-sm">
+                            <button id="ai-submit-button" class="cta-button brand-bg text-white font-bold rounded-2xl px-8 py-4 brand-bg-hover transition-all flex items-center justify-center min-w-[140px] shadow-lg">
+                                <span class="button-text flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                    Explain It
+                                </span>
+                                <span class="button-spinner hidden animate-spin rounded-full h-6 w-6 border-b-2 border-white"></span>
+                            </button>
+                        </div>
                     
                     <!-- Sample Questions -->
                     <div class="flex flex-wrap gap-3 justify-center mb-8">
