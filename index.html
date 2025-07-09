@@ -398,6 +398,59 @@
                 width: 52px;
                 height: 52px;
             }
+            
+            /* Mobile-first improvements */
+            h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+            }
+            
+            .insurance-card {
+                margin-bottom: 1rem;
+            }
+            
+            .nav-logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .nav-logo img {
+                width: 24px;
+                height: 24px;
+            }
+            
+            /* Larger touch targets */
+            .quote-cta-button, .cta-button {
+                min-height: 48px;
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+            
+            /* Better spacing on mobile */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem !important;
+            }
+            
+            .text-5xl {
+                font-size: 2.25rem !important;
+            }
+            
+            .text-4xl {
+                font-size: 1.875rem !important;
+            }
+            
+            /* Stack insurance cards in single column */
+            .grid.lg\\:grid-cols-5 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -912,6 +965,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         // Submit to backend
                         try {
+                            const submitButton = form.querySelector('.submit-button');
+                            const originalText = submitButton.textContent;
+                            
+                            // Show loading state
+                            submitButton.disabled = true;
+                            submitButton.innerHTML = '<div class="flex items-center justify-center gap-2"><div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>Submitting...</div>';
+                            
                             const response = await fetch('/.netlify/functions/submit-lead', {
                                 method: 'POST',
                                 headers: {
@@ -924,11 +984,33 @@ document.addEventListener('DOMContentLoaded', () => {
                             
                             if (response.ok && result.success) {
                                 console.log('Lead submitted successfully:', result);
+                                // Reset button
+                                submitButton.disabled = false;
+                                submitButton.textContent = originalText;
                             } else {
                                 console.error('Failed to submit lead:', result.error);
+                                // Reset button
+                                submitButton.disabled = false;
+                                submitButton.textContent = originalText;
+                                // Show error message
+                                submitButton.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                                submitButton.textContent = 'Error - Try Again';
+                                setTimeout(() => {
+                                    submitButton.style.background = '';
+                                    submitButton.textContent = originalText;
+                                }, 3000);
                             }
                         } catch (error) {
                             console.error('Error submitting lead:', error);
+                            const submitButton = form.querySelector('.submit-button');
+                            const originalText = submitButton.textContent;
+                            submitButton.disabled = false;
+                            submitButton.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                            submitButton.textContent = 'Error - Try Again';
+                            setTimeout(() => {
+                                submitButton.style.background = '';
+                                submitButton.textContent = originalText;
+                            }, 3000);
                         }
                     }
                     
@@ -956,18 +1038,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- Gemini AI Logic ---
     const handleAiSubmit = async () => {
-        const userInput = aiPromptInput.value;
+        const userInput = aiPromptInput.value.trim();
         if (!userInput) return;
 
         const buttonText = aiSubmitButton.querySelector('.button-text');
         const buttonSpinner = aiSubmitButton.querySelector('.button-spinner');
 
+        // Show loading state
         buttonText.classList.add('hidden');
         buttonSpinner.classList.remove('hidden');
         aiSubmitButton.disabled = true;
+        aiPromptInput.disabled = true;
         
         aiResponseContainer.classList.remove('hidden');
-        aiResponseContainer.innerHTML = '<p class="text-slate-500">Thinking...</p>';
+        aiResponseContainer.innerHTML = '<div class="flex items-center gap-3"><div class="animate-spin rounded-full h-6 w-6 border-b-2 border-cyan-600"></div><p class="text-slate-500">Thinking...</p></div>';
 
         try {
             const response = await fetch('/.netlify/functions/ai-chat', {
@@ -979,17 +1063,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
             
             if (result.success && result.response) {
-                aiResponseContainer.innerHTML = result.response.replace(/\n/g, '<br><br>');
+                aiResponseContainer.innerHTML = `<div class="prose prose-slate max-w-none">${result.response.replace(/\n/g, '<br><br>')}</div>`;
             } else {
                 throw new Error(result.error || 'No response from AI.');
             }
         } catch (error) {
             console.error("AI API Error:", error);
-            aiResponseContainer.innerHTML = '<p class="text-red-500">Sorry, I\'m having trouble right now. Please try again later.</p>';
+            aiResponseContainer.innerHTML = '<div class="flex items-center gap-3 text-red-500"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg><p>Sorry, I\'m having trouble right now. Please try again later.</p></div>';
         } finally {
+            // Reset button state
             buttonText.classList.remove('hidden');
             buttonSpinner.classList.add('hidden');
             aiSubmitButton.disabled = false;
+            aiPromptInput.disabled = false;
         }
     };
 
