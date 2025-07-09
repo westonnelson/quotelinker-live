@@ -1,6 +1,6 @@
 {
   "name": "quotelinker-live",
-  "version": "1.0.0",
+  "version": "2025.07.09",
   "description": "QuoteLinker - AI-Optimized InsurTech Marketplace",
   "scripts": {
     "start": "python -m http.server 8000",

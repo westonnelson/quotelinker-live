@@ -32,7 +32,6 @@ export const siteConfig = {
     { name: "About Us", href: "/about.html" },
     { name: "For Customers", href: "/customers.html" },
     { name: "For Agents", href: "/agents.html" },
-    { name: "Learn", href: "/customers/learn/" },
     { name: "Contact", href: "/contact.html" },
     { name: "Privacy Policy", href: "/privacy.html" },
     { name: "Terms of Service", href: "/terms.html" }
